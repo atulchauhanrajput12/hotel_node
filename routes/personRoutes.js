@@ -73,7 +73,7 @@ router.delete('/:id', async (req, res) => {
         const personId = req.params.id; // Extract the person's ID from the URL parameter
         
         // Assuming you have a Person model
-        const response = await Person.findByIdAndDelete(personId);
+        const response = await Person.findByIdAndDelete(personId); 
         if (!response) {
             return res.status(404).json({ error: 'Person not found' });
         }
@@ -84,5 +84,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({error: 'Internal Server Error'});
     }
 })
+
+//git magic check
 
 module.exports = router;
